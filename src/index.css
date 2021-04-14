@@ -1,0 +1,166 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+body{
+  margin: 0%;
+  color: rgb(7, 6, 6);
+  background-color:bisque;
+}
+
+.search_main {
+  height: 100px;
+  background-color: #333;
+  color: whitesmoke;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;}
+.search{
+  padding: 5px;
+  width: 300px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+}
+
+.App {
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 0, 0, 0.52),
+      rgba(0, 195, 255, 0.73)
+    ),
+    url("https://images.unsplash.com/photo-1592210454359-9043f067919b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80");
+  background-repeat:repeat;
+  transition: 0.2s ease;
+}
+
+.App.hot {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(255, 16, 16, 0.52),
+      rgba(0, 0, 0, 0.73)
+    ),
+    url("https://www.treehugger.com/thmb/_lhgtC-6L7fxeumvXVjCIKRODlI=/1000x664/filters:fill(auto,1)/__opt__aboutcom__coeus__resources__content_migration__mnn__images__2018__07__palm_trees_hot_sun-f8e20b86425b492f9d777d92db46db49.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: 0.2s ease;
+}
+
+main {
+  min-height: 100vh;
+  padding: 25px;
+}
+
+.App.cold {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 255, 213, 0.52),
+      rgba(0, 0, 0, 0.73)
+    ),
+    url("https://images.dailyhive.com/20190119170818/shutterstock_231274975.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: 0.2s ease;
+}
+
+.search-container {
+  height: 100px;
+
+  color: whitesmoke;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;}
+.search{
+  padding: 5px;
+  width: 300px;
+  justify-content: center;
+}
+
+.search-bar {
+  color: black;
+  font-size: 15px;
+  display: block;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  outline: none;
+  appearance: none;
+  border-radius: 15px 15px 15px 15px;
+  box-shadow: 0px 5px rgba(58, 53, 53, 0.73);
+  background: rgba(255, 255, 255, 0.52);
+  transition: 0.4s ease;
+}
+
+.search-container .search-bar:focus {
+  background-color: white;
+}
+
+.location-container {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  text-shadow: 3px 3px rgba(58, 53, 53, 0.73);
+}
+
+.location-container .date {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  text-shadow: 3px 3px rgba(58, 53, 53, 0.73);
+}
+
+.weather-container {
+  text-align: center;
+}
+
+.weather-container .temperature {
+  color: white;
+  position: relative;
+  display: inline-block;
+  margin: 30px auto;
+  padding: 15px 25px;
+  font-size: 100px;
+  font-weight: 700;
+  background-color: rgb(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 3px 3px rgba(58, 53, 53, 0.73);
+  text-shadow: 3px 3px rgba(58, 53, 53, 0.73);
+}
+
+.weather-container .weather {
+  color: white;
+  font-size: 50px;
+  font-weight: 700;
+  text-shadow: 3px 3px rgba(58, 53, 53, 0.73);
+}
+.search{
+  color:brown;
+  width: 70px;
+  padding: 10px;
+  border-radius: 20px;
+  
+}
+.search:hover{
+  color: cornflowerblue;
+}
