@@ -27,7 +27,7 @@ function MyInfo() {
         console.log(result);
       });
   };
-if (weather.cod===404) {
+if (weather.cod===405) {
   alert("WRONG STATE")
 }
   return (
