@@ -12,6 +12,8 @@ const dateString = Date().toString();
 function MyInfo() {
   const [query, setQuery] = useState("");
   const [weather, setWeather] = useState({});
+  const [lat, setLat] = useState([]);
+  const [long, setLong] = useState([]);
   const [errMessage, setErrMessage] = useState("");
 
   const search = (event) => {
@@ -34,7 +36,12 @@ function MyInfo() {
 
     console.log(weather.main);
   };
-
+  navigator.geolocation.getCurrentPosition(function(position) {
+    setLat(position.coords.latitude);
+    setLong(position.coords.longitude);
+  });
+  console.log("Latitude is:", lat)
+  console.log("Longitude is:", long)
   return (
     <div
       className={
@@ -56,31 +63,33 @@ function MyInfo() {
           />
           <input type="submit" className="search" />
         </form>
-
-        {typeof weather.main !== "undefined" ? (
-          <div>
-            <div className="location-container">
-              <div className="location">
-                {weather.name}, {weather?.sys?.country}
+        <div className="card">
+          {typeof weather.main !== "undefined" ? (
+            <div>
+              <div className="location-container">
+                <div className="location">
+                  {weather.name}, {weather?.sys?.country}
+                </div>
               </div>
-            </div>
-            <div className="weather-container">
-              <div className="temperature">
-                {Math.round(weather.main.temp)}°C
+              <div className="weather-container">
+                <div className="temperature">
+                  {Math.round(weather.main.temp)}°C
+                </div>
+                <div className="weather">{weather.weather.main}</div>
               </div>
-              <div className="weather">{weather.weather.main}</div>
+              <div className="date">Current Time :{dateString}</div>
             </div>
-            <div className="date">Current Time :{dateString}</div>
+          ) : (
+            "this is working"
+          )}
+          <div className="error">
+            {errMessage.length > 0 ? (
+              <span style={{ color: "red" }} className="text-danger">
+                {errMessage}
+              </span>
+            ) : null}
           </div>
-        ) : (
-          "this is working"
-        )}
-        <div className="error">
-          {errMessage.length > 0 ? (
-            <span style={{ color: "red" }} className="text-danger">
-              {errMessage}
-            </span>
-          ) : null}
+         
         </div>
       </main>
     </div>
