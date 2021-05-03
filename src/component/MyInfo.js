@@ -55,78 +55,187 @@ function MyInfo() {
           : "App"
       }
     >
-      <main>
-        <form className="search-container" onSubmit={search}>
-          <input
-            type="text"
-            placeholder="Search..."
-            className="search-bar"
-            onChange={(event) => {
-              setQuery(event.target.value);
+      {/* <main>
+        <div className="container">
+          <form className="form" onSubmit={search}>
+            <input
+              type="text"
+              placeholder="Enter city to get weather update...."
+              className="form-control"
+              onChange={(event) => {
+                setQuery(event.target.value);
 
-              setParsedQuery(event.target.value.replaceAll(" ", "%20"));
-            }}
-            value={query}
-          />
-          <input type="submit" className="search" />
-        </form>
+                setParsedQuery(event.target.value.replaceAll(" ", "%20"));
+              }}
+              value={query}
+            />
+            <button type="submit" className="btn btn-success">Search</button>
+          </form>
 
-        <div className="card">
-          {typeof weather.main !== "undefined" ? (
-            <div>
-              <div className="location-container">
-                <div className="location">
-                  {weather.name}, {weather?.sys?.country}
+          <div className="card">
+            {typeof weather.main !== "undefined" ? (
+              <div>
+                <div className="location-containe">
+                  <div className="locatio">
+                    {weather.name}, {weather?.sys?.country}
+                  </div>
+                </div>
+                <img
+                  src={`http://openweathermap.org/img/w/${weather.weather[0].icon}.png`}
+                  alt="weather status icon"
+                  className="weather-ico"
+                />
+                <div className="weather-containe">
+                  <div className="temperatur">
+                    {Math.round(weather.main.temp)}°C
+                  </div>
+
+                  <div className="weathe">{weather.weather.main}</div>
+                </div>
+                <div className="fle">
+                  <p>Humidity: {weather.main.humidity} %</p>
+                  <p>Description: {weather.weather[0].main}</p>
+
+                  <p>Day: {moment().format("dddd")}</p>
+                  <p>Date: {moment().format("LL")}</p>
+                </div>
+                <div class="container">
+                  <div class="row">
+                    <div className="col-md-12">
+                      <div className="ma">
+                        <iframe
+                          border-radius="10pxn"
+                          height="169px"
+                          width="100%"
+                          id="gmap_canvas"
+                          title="location-map"
+                          src={`https://maps.google.com/maps?q=${parsedQuery}&t=&z=13&ie=UTF8&iwloc=&output=embed`}
+                          frameborder="0"
+                          scrolling="no"
+                          marginheight="0"
+                          marginwidth="0"
+                        ></iframe>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <img
-                src={`http://openweathermap.org/img/w/${weather.weather[0].icon}.png`}
-                alt="weather status icon"
-                className="weather-icon"
-              />
-              <div className="weather-container">
-                <div className="temperature">
-                  {Math.round(weather.main.temp)}°C
-                </div>
+            ) : (
+              "Wellcome to my weather app"
+            )}
 
-                <div className="weather">{weather.weather.main}</div>
-              </div>
-              <div className="flex">
-                <p>Humidity: {weather.main.humidity} %</p>
-                <p>Description: {weather.weather[0].main}</p>
-
-                <p>Day: {moment().format("dddd")}</p>
-                <p>Date: {moment().format("LL")}</p>
-              </div>
-
-              <div className="map">
-                <iframe
-                  border-radius="10px"
-                  height="169px"
-                  width="100%"
-                  id="gmap_canvas"
-                  title="location-map"
-                  src={`https://maps.google.com/maps?q=${parsedQuery}&t=&z=13&ie=UTF8&iwloc=&output=embed`}
-                  frameborder="0"
-                  scrolling="no"
-                  marginheight="0"
-                  marginwidth="0"
-                ></iframe>
-              </div>
+            <div className="error">
+              {errMessage.length > 0 ? (
+                <span style={{ color: "red" }} className="text-danger">
+                  {errMessage}
+                </span>
+              ) : null}
             </div>
-          ) : (
-            "Wellcome to my weather app"
-          )}
+          </div>
+        </div>
+      </main> */}
 
-          <div className="error">
-            {errMessage.length > 0 ? (
-              <span style={{ color: "red" }} className="text-danger">
-                {errMessage}
-              </span>
-            ) : null}
+
+
+      {/* Section to start my weather app */}
+      
+    <div class="container">
+      <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="https://freepngimg.com/thumb/weather/23648-2-weather-picture.png" alt="" width="150" height="100"/>
+        <h2>WEATHER APP</h2>
+        <p class="lead">WELCOME TO DARK WEATHER APP.</p>
+      </div>
+
+
+      <div class="row">
+        <div class="col-md-4 order-md-2 mb-4">
+          <main>
+        <div className="container">
+          <form className="form" onSubmit={search}>
+            <input
+              type="text"
+              placeholder="Enter city to get weather update...."
+              className="form-control"
+              onChange={(event) => {
+                setQuery(event.target.value);
+
+                setParsedQuery(event.target.value.replaceAll(" ", "%20"));
+              }}
+              value={query}
+            />
+            
+            <button type="submit" className="btn btn-block btn-success">Search</button>
+          </form>
+
+          <div >
+            {typeof weather.main !== "undefined" ? (
+              <div className="text-center">
+                <div className="location-containe">
+                  <div className="locatio">
+                    {weather.name}, {weather?.sys?.country}
+                  </div>
+                </div>
+                <img
+                  src={`http://openweathermap.org/img/w/${weather.weather[0].icon}.png`}
+                  alt="weather status icon"
+                  className="weather-ico"
+                />
+                <div className="weather-containe text-center">
+                  <div className="temperatur">
+                    {Math.round(weather.main.temp)}°C
+                  </div>
+
+                  <div className="weathe">{weather.weather.main}</div>
+                </div>
+                <div className="fle text-center">
+                  <p>Humidity: {weather.main.humidity} %</p>
+                  <p>Description: {weather.weather[0].main}</p>
+
+                  <p>Day: {moment().format("dddd")}</p>
+                  <p>Date: {moment().format("LL")}</p>
+                </div>
+                <div class="container">
+                  <div class="row">
+                    <div className="col-md-12">
+                      <div className="ma">
+                        <iframe
+                          border-radius="10pxn"
+                          height="169px"
+                          width="100%"
+                          id="gmap_canvas"
+                          title="location-map"
+                          src={`https://maps.google.com/maps?q=${parsedQuery}&t=&z=13&ie=UTF8&iwloc=&output=embed`}
+                          frameborder="0"
+                          scrolling="no"
+                          marginheight="0"
+                          marginwidth="0"
+                        ></iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              "Wellcome to my weather app"
+            )}
+
+            <div className="error">
+              {errMessage.length > 0 ? (
+                <span style={{ color: "red" }} className="text-danger">
+                  {errMessage}
+                </span>
+              ) : null}
+            </div>
           </div>
         </div>
       </main>
+           
+
+          
+        </div>
+      </div>
+    </div>
+      {/* Section to end my weather app  */}
     </div>
   );
 }
